@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-require('donenv').config()
+// require('donenv').config()
 var routes = require('./routes/');
 
 var app = express();
