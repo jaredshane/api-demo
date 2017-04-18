@@ -8,7 +8,9 @@ module.exports = {
 
   test: {
     client: 'pg',
-    connection: 'postgres://localhost/tv_faves_test',
+    connection: {
+      database: 'tv_faves_test'
+    },
     migrations: {
       directory: __dirname + '/db/migrations'
     },
@@ -19,7 +21,9 @@ module.exports = {
   development: {
     client: 'pg',
     debug: true,
-    connection: 'postgres://localhost/tv_faves',
+    connection: {
+      database: 'tv_faves'
+    },
     migrations: {
       directory: __dirname + '/db/migrations'
     },
@@ -29,7 +33,9 @@ module.exports = {
   },
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: {
+      database: process.env.DATABASE_URL
+    },
     migrations: {
       directory: __dirname + '/db/migrations'
     },
