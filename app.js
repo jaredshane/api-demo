@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-
+require('donenv').config()
 var routes = require('./routes/');
 
 var app = express();
@@ -45,6 +45,7 @@ app.use( (err, req, res, next) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
+  console.log(process.env.NODE_ENV)
   console.log(`Listening on port ${port} in this super keen env: ${process.env.NODE_ENV}`);
 });
 
