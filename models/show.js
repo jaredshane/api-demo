@@ -19,7 +19,7 @@ const Show = bookshelf.Model.extend({
     })
     .catch( (error) => {
       return error
-    });
+    })
   },
   getSingleShow: function(id) {
     // console.log("show id", id);
@@ -31,8 +31,8 @@ const Show = bookshelf.Model.extend({
     .catch( (error) => {
       // console.log("error??", error);
       return error;
-    });
+    })
   }
-});
+})
 
-module.exports = bookshelf.model('Show', Show);
+module.exports = bookshelf.model('Show', Show)
